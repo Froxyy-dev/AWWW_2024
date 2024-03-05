@@ -91,7 +91,7 @@ Locally linear embedding, or LLE for short, is a dimensionality reduction algori
 
 In addition to LLE, t-SNE, or t-distributed stochastic neighbor embedding, is another commonly used dimensionality reduction algorithm. It works by using a probability distribution over pairs of points to preserve important features within the data while minimizing noise and other irrelevant information. A 2D or 3D representation is then created based on this probability distribution, which can be used for visualization and analysis of the data.
 
-### Independent Component Analysis (ICA) [link to duck response](independent_component_analysis_(ica).md)
+### Independent Component Analysis (ICA) [link to duck response](independent_component_analysis_ica.md)
 
 
 ICA is used to find independent components within a dataset. These “hidden patterns” can then be used to make predictions or extract more information about the data. It assumes that maximum one of the components in a given dataset is Gaussian and the other components are independent of each other.

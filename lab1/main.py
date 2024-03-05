@@ -49,7 +49,7 @@ def generate_list_page(soup):
                 algorithm_descriptions[ml_algorithm] = ml_paragraph.text
 
     for algorithm in ml_algorithms:
-        algorithm_id = algorithm.replace(' ', '_').lower()
+        algorithm_id = algorithm.replace(' ', '_').lower().replace('(', '').replace(')', '')
         algorithm_page_link = list_page_file.new_inline_link(link=f'{algorithm_id}.md', text='link to duck response')
 
         list_page_file.new_header(level=3, title=f"{algorithm} {algorithm_page_link}")
