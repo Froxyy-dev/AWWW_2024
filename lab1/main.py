@@ -61,7 +61,9 @@ def generate_list_page(soup):
 
 
 def generate_algorithm_page(ml_algorithm, algorithm_descriptions):
-    algorithm_page_file = MdUtils(file_name=f"{ml_algorithm.replace(' ', '_').lower()}")
+    cleaned_algorithm = ml_algorithm.replace(' ', '_').lower().replace('(', '').replace(')', '')
+
+    algorithm_page_file = MdUtils(file_name=f"{cleaned_algorithm}")
     algorithm_page_file.new_header(level=1, title=f'{ml_algorithm}')
 
     algorithm_page_file.new_header(level=2, title='Description')
@@ -81,12 +83,12 @@ def generate_algorithm_page(ml_algorithm, algorithm_descriptions):
     main_introduction = wiki_soup.find('div', class_='shortdescription nomobile noexcerpt noprint searchaux')
 
     try:
-        cnt = 1
+        count = 1
         paragraph = main_introduction.find_next_sibling('p')
 
-        while len(paragraph.text) < BOUND and cnt < BOUND:
+        while len(paragraph.text) < BOUND and count < BOUND:
             paragraph = paragraph.find_next_sibling('p')
-            cnt += 1
+            count += 1
 
         cleaned_text = re.sub(r'\[\d+\]', '', paragraph.text)
 
