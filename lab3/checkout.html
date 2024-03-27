@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <style>
+    .list-group-item.active-hover:hover {
+      background-color: #6c757d;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body class="bg-dark text-white">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <div class="container-xl">
+    <div class="py-5 text-center ">
+      <h1 class="fs-1 fw-bold mb-4">Algorithm Creator</h1>
+      <p class="fs-4">
+        Below is a form where you can order your perfect Machine Learning algorithm.
+      </p>
+    </div>
+
+    <div class="row m-10 row g-5">
+      <div class="col-md-7 col-lg-10">
+        <h4 class="mb-3">Algorithm information</h4>
+
+        <form class="m-10">
+
+          <div class="row mb-4">
+
+            <div class="col">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder value required>
+            </div>
+
+            <div class="col">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder value required>
+            </div>
+
+          </div>
+
+          <div class="row mb-4">
+            <div class="col">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder value
+                required>
+              <div id="emailHelp" class="form-text text-white">We'll never share your email with anyone else.</div>
+            </div>
+
+            <div class="col">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock" placeholder
+                value required>
+              <div id="passwordHelpBlock" class="form-text text-white">
+                Your password must be 8-20 characters long, contain letters and numbers.
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row mb-4">
+            <div class="col">
+              <label for="algorithmType" class="form-label">Algorithm type</label>
+
+              <select id="algorithmType" class="form-select" aria-label="algorithmSelected" required>
+                <option selected disabled value="">Select algorithm type...</option>
+                <option value="regression">Regression</option>
+                <option value="classification">Classification</option>
+                <option value="rl">Reinforcement Learning</option>
+                <option value="tree">Tree</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <h5>Select features</h5>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkEnsemble">
+                <label class="form-check-label" for="checkEnsemble">
+                  Model Ensembling
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkBoosting">
+                <label class="form-check-label" for="checkBoosting">
+                  Gradient Boosting
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkData">
+                <label class="form-check-label" for="checkData">
+                  Data Augmentation
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="checkDecision">
+                <label class="form-check-label" for="checkDecision">
+                  Decision Trees
+                </label>
+              </div>
+            </div>
+
+            <div class="col">
+              <h5>Payment</h5>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="creditCard"
+                  id="radioCreditCard" checked required>
+                <label class="form-check-label" for="radioCreditCard">
+                  Credit card
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="debitCard" id="radioDebitCard"
+                  required>
+                <label class="form-check-label" for="radioDebitCard">
+                  Debit card
+                </label>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" value="payPal" id="radioPayPal"
+                  required>
+                <label class="form-check-label" for="radioPayPal">
+                  PayPal
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" id="termsAgreement" required>
+            <label class="form-check-label" for="termsAgreement">
+              Agree to terms and conditions
+            </label>
+          </div>
+
+          <div class="row">
+            <button type="submit" class="btn btn-primary fw-bold fs-5 p-2">Create your algorithm!</button>
+          </div>
+
+        </form>
+      </div>
+
+
+      <div class="col">
+        <h4 class="mb-3 text-blue">
+          <span class="text-primary">Latest updates</span>
+        </h4>
+
+        <ul class="list-group">
+          <li class="list-group-item active" aria-current="true">New features</li>
+          <li class="list-group-item active-hover">Add decision trees</li>
+          <li class="list-group-item active-hover">Add debit card</li>
+          <li class="list-group-item active-hover">First customer</li>
+          <li class="list-group-item active-hover">Launched website!</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <footer class="my-4 pt-4 text-center text-small">
+      <p class="mb-1">© 2024 Mateusz Winiarek</p>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

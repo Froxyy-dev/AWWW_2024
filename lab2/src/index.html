@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: 10fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "header header"
+        "main sidebar"
+        "footer footer";
+      justify-items: center;
+      background-color: #9de0e2;
+    }
+
+    header {
+      grid-area: header;
+      background-color: #befff6;
+    }
+
+    footer {
+      grid-area: footer;
+      background-color: #f3f4f6;
+    }
+
+    .main {
+      grid-area: main;
+      background-color: #c5f0f3;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background-color: #e5e7eb;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header class="px-40 py-7 text-2xl rounded-3xl mt-4">
+    <h1 class="text-green-500 text-center underline decoration-2 p-2 font-bold">Machine Learning Algorithms</h1>
+  </header>
+
+  <div class="main p-10 rounded-3xl m-4">
+    <h2 class="text-slate-400	text-xl text-center underline pb-8 font-bold">Introduction to Machine Learning</h2>
+
+    <article class="bg-sky-200 rounded-3xl">
+      <p class="text-sky-500 text-center pt-5 pb-10">
+        The new age of computing is <strong>heavily reliant on machine learning and the algorithms</strong> that power
+        it.
+        These algorithms process and understand large amounts of data,
+        allowing machines to make predictions and decisions without human input.
+        There are dozens of machine learning algorithms, each with strengths and weaknesses.
+        <em>This post will explore the</em> most commonly used machine learning algorithms
+        and discuss what makes them unique.
+      </p>
+
+    </article>
+
+    <div class="shadow-inner bg-gray-300 p-3 rounded-3xl mt-4">
+      <div class="flex flex-row p-5">
+        <div class="bg-slate-100	p-3 shadow-inner rounded-3xl mr-4 flex-auto">
+          <h2 class="text-rose-700 text-center text-lg font-bold">Machine Learning Algorithms Table</h2>
+          <div class="py-10">
+            <table class="table-auto">
+              <caption class="text-rose-700 text-lg">
+                List of ML algos
+              </caption>
+              <thead>
+                <tr>
+                  <th>Machine learning algos</th>
+                  <th>Type</th>
+                  <th>Difficulty</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>Linear Regression</th>
+                  <td>Regression</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <th>Logistic Regression</th>
+                  <td>Classification</td>
+                  <td>8</td>
+                </tr>
+                <tr>
+                  <th>PCA</th>
+                  <td>Dimension reduction</td>
+                  <td>7</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Average difficulty</th>
+                  <td>7</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+
+        <div class="bg-white p-3 shadow-inner rounded-3xl mr-4 flex-auto">
+          <h2 class="text-rose-700 text-center text-lg font-bold">Gradient Boosting</h2>
+          <img class="fit-picture pt-3" src="gradient_boost.png" alt="Visualization" width="600" height="300" />
+        </div>
+
+        <div class="bg-slate-100 p-3 shadow-inner rounded-3xl mr-4 flex-auto">
+          <h2 class="text-rose-700 text-center text-lg font-bold">Neural Network Layers</h2>
+          <map name="primary">
+            <area shape="rect" coords="0, 0, 100, 400" href="https://nordvpn.com/pl/cybersecurity/glossary/input-layer/"
+              target="_blank" alt="input" />
+            <area shape="rect" coords="100,0,200,400"
+              href="https://deepai.org/machine-learning-glossary-and-terms/hidden-layer-machine-learning"
+              target="_blank" alt="hidden" />
+            <area shape="rect" coords="200,0,300,400"
+              href="https://www.techopedia.com/definition/33263/output-layer-neural-networks" target="_blank"
+              alt="output" />
+          </map>
+          <img class="pt-3" usemap="#primary" src="nn.png" alt="Visualization or sth" width="300" height="300" />
+        </div>
+
+        <div class="bg-white p-3 shadow-inner rounded-3xl flex-auto">
+          <h2 class="text-rose-700 text-center text-lg font-bold">Extended Algorithms List</h2>
+
+          <ol type="i" class="pl-10 pt-11" style="list-style-type: lower-roman">
+            <li>K-Means Clustering</li>
+            <li>Hierarchical Clustering</li>
+            <li>DBSCAN</li>
+            <li>Autoencoders</li>
+            <li>Locally Linear Embedding</li>
+            <li>t-SNE</li>
+            <li>Independent Component Analysis (ICA)</li>
+            <li>Factor Analysis</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row p-5">
+      <div class="bg-slate-300 p-2 flex-auto rounded-3xl mr-4 flex-auto">
+        <h2 class="text-violet-600 text-center pt-3 text-lg font-bold">Algorithm choose</h2>
+        <form action="" method="get" class="form-example">
+          <div class="text-center flex flex-col items-center p-2">
+            <label for="algo">Enter your algo: </label>
+            <input class="rounded-3xl p-2 mt-2 mb-2" type="text" name="algo" id="algo" required />
+          </div>
+          <div class="text-center">
+            <select class="rounded-3xl bg-sky-300 p-2 text-white font-bold text-lg mt-2 mb-2" name="algos"
+              id="algo-select" required>
+              <option value="" disabled selected>--Please choose an algo--</option>
+              <option value="lle">Locally Linear Embedding</option>
+              <option value="bayes">Naive Bayes</option>
+              <option value="bagging">Bootstrap aggregating</option>
+            </select>
+
+          </div>
+          <div class="text-center p-2">
+            <input class="animate-ping bg-sky-300 p-3 font-bold rounded-lg" type="submit" value="Click me!" />
+          </div>
+        </form>
+      </div>
+
+      <div class="p-2 px-2 bg-sky-300 text-center flex-auto rounded-3xl mr-4 flex-auto">
+        <h2 class="text-violet-600 text-center pt-3 text-lg font-bold">Hidden details</h2>
+
+        <details class="p-2">
+          <summary>Spoiler</summary>
+          There are more algorithms to cover.
+        </details>
+
+        <div class="text-center flex flex-col items-center text-lg p-3">
+          <label class="p-3" for="task">Algorithms covered:</label>
+          <progress id="task" max="100" value="40">40%</progress>
+        </div>
+      </div>
+
+      <div class="bg-orange-200 p-2 flex-auto rounded-3xl mr-4 flex-auto">
+        <h2 class="text-violet-600 text-center pt-3 text-lg font-bold">Summary</h2>
+        <p class="text-orange-600	text-center pt-2">
+          These algorithms are used across many industries and fields to help machines make predictions and decisions.
+        </p>
+        <p class="text-orange-600	text-center">
+          We can use many different machine learning algorithms for different tasks, including dimensionality reduction,
+        </p>
+        <p class="text-orange-600	text-center">
+          classification, prediction, and clustering.
+        </p>
+        <p class="text-orange-600	text-center">
+          Check this if you have learned something new: <input type="checkbox" />
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="sidebar py-20 px-5 text-sky-500 text-lg text-center underline decoration-indigo-500 decoration-2 rounded-3xl mr-4">
+    <h2 class="text-rose-500 underline decoration-2 pt-20 pb-4 text-xl font-bold">ML Algorithms</h1>
+      <ol class="py-10">
+        <li>Introduction</li>
+        <li>Algos Table</li>
+        <li>Boosting</li>
+        <li>NN Layers</li>
+        <li>Extended List</li>
+        <li>Summary</li>
+        <li>Independent Component Analysis (ICA)</li>
+        <li>Factor Analysis</li>
+      </ol>
+  </div>
+
+  <footer class="p-7 text-lg rounded-3xl mb-4">
+    <h2>Source of text, lists and algorithms is here:
+      <a class="text-sky-400/100 hover:underline"
+        href="https://www.aiplusinfo.com/blog/top-20-machine-learning-algorithms-explained/">
+        ml algorithms explained
+      </a>
+    </h2>
+  </footer>
+
+</body>
+
+</html>
