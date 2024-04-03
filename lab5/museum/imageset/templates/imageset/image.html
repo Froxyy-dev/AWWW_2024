@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div>
+    <a href="{% url 'imageset:imageset_render' %}">Powrót do listy</a>
+    <h2> Obrazek {{ image.name }} </h2>
+
+    {{svg_image|safe}}
+
+    {% if can_edit %}
+    <div>
+        <h3>Dane</h3>
+
+        <h4>Wielkość</h4>
+        {{ image.width }} x {{ image.height }}
+
+        <h4>Prostokąty</h4>
+
+        <table>
+            <thead>
+                <tr>
+                  <th>x</th>
+                  <th>y</th>
+                  <th>szerokość</th>
+                  <th>wysokość</th>
+                  <th>kolor</th>
+                  <th>akcje</th>
+                </tr>
+            </thead>
+
+            <tbody>
+              {% for rectangle in rectangles %}
+                <tr>
+                  <td>{{ rectangle.X }}</td>
+                  <td>{{ rectangle.Y }}</td>
+                  <td>{{ rectangle.width }}</td>
+                  <td>{{ rectangle.height }}</td>
+                  <td>{{ rectangle.color }}</td>
+                  <td>
+                      <a href="{% url 'imageset:delete_rectangle' pk=rectangle.id %}">Usuń</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+
+        <h4>Dodaj nowy prostokąt</h4>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Dodaj" />
+        </form>
+
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}
